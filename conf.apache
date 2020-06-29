@@ -1,0 +1,269 @@
+# ip number
+regexp=^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+colours=bold blue
+count=once
+-
+# everything in brackets
+regexp=\[.+?\]
+colours=cyan
+count=once
+-
+# Ratings
+regexp=.+?&rate=.+?
+colours=yellow
+count=once
+-
+# everything in ""
+regexp=\".+?\"
+colours=magenta
+count=more
+-
+# everything in ""
+regexp=\"GET .+?\"
+colours=bold green
+count=more
+-
+# everything in ""
+regexp=\"HEAD .+?\"
+colours=green
+count=more
+-
+# everything in ""
+regexp=\"POST .+?\"
+colours=bold yellow
+count=more
+-
+# everything in ""
+# regexp=.+?rogerbot.+?
+# colours=bold red
+# count=more
+
+# everything in ""
+# regexp=.+?opensiteexplorer.+?
+# colours=bold red
+# count=more
+
+# everything in ()
+regexp=\(.+?\)
+colours=green
+count=more
+-
+# Googlebot ()
+regexp=.+?googlebot.+?
+colours=red
+count=more
+-
+# Fail2Ban Ban ()
+regexp=(.+?Ban.+?)
+colours=red
+count=once
+-
+# Fail2Ban Unban ()
+regexp=(.+?Unban.+?)
+colours=green
+count=once
+-
+# Google-Proxy ()
+regexp=^google-proxy
+colours=red
+count=more
+-
+# Google-Proxy ()
+regexp=^rate-limited-proxy
+colours=red
+count=more
+-
+# HTTP Method
+regexp=(?:HEAD|PUT|DELETE)
+colours=bold blue
+count=once
+-
+# HTTP Method
+#regexp=(?:POST)
+#colours=yellow
+#count=once
+
+# HTTP Path
+#regexp=\s/[^\s]+
+#colours=bold green
+#-
+
+# HTTP OK Status codes - from http://httpcats.herokuapp.com/ ;-)
+regexp=\s(?:10[01]|20[02467]|30[0123457])
+colours=green
+count=once
+-
+# HTTP Error status code - from the same source as above
+regexp=\s(?:40[1-9]|41[1-8]|42[2-9]|431|444|450|50[2-9]|599)
+colours=bold red
+count=once
+-
+# Request byte size
+regexp=\s(?!(?:10[01]|20[02467]|30[0123457])|(?:40[1-9]|41[1-8]|42[2-9]|431|444|450|50[2-9]|599))\d+
+colours=yellow
+count=once
+-
+# HTTP Redirects
+regexp=\s(?:301)
+colours=bold blue
+count=once
+
+# Log Switching
+regexp=.+?access.log.+?
+colours=bold red
+count=once
+-
+# Log Switching
+regexp=.+?redis-server.log.+?
+colours=bold blue
+count=once
+-
+# Log Switching
+regexp=.+?error.log.+?
+colours=bold red
+count=once
+-
+# Log Switching
+regexp=.+?mail.log.+?
+colours=bold blue
+count=once
+-
+# Log Switching
+regexp=.+?auth.log.+?
+colours=bold blue
+count=once
+-
+# Log Switching
+regexp=.+?fail2ban.log.+?
+colours=bold blue
+count=once
+-
+# cart ()
+regexp=.+?/cart/.+?
+colours=bold blue
+count=more
+-
+# checkout ()
+regexp=.+?/checkout/.+?
+colours=bold blue
+count=more
+-
+# skroutz ()
+regexp=.+?skroutz.+?
+colours=bold red
+count=more
+-
+# bestprice ()
+regexp=.+?bestprice.+?
+colours=bold red
+count=more
+-
+# hotprice ()
+regexp=.+?hotprice.+?
+colours=bold red
+count=more
+-
+# skroutz ()
+regexp=.+?https://www.skroutz.gr/.+?
+colours=bold red
+count=more
+-
+# hotprice ()
+regexp=.+?www.hotprice.gr.+?
+colours=bold red
+count=more
+-
+# bestprice ()
+regexp=.+?www.bestprice.gr.+?
+colours=bold red
+count=more
+-
+# skroutz bot ()
+regexp=.+?SkroutzBot+?
+colours=bold red
+count=more
+-
+# adwords ()
+regexp=.+?gclid=+?
+colours=bold magenta
+count=more
+-
+# sent mail
+regexp=(?:status=sent)
+colours=bold green
+-
+# to mail address
+regexp=(?:to=<.+?>)
+colours=bold blue
+-
+# mail bounced status
+regexp=(?:status=bounced)
+colours=bold yellow
+-
+# order received
+regexp=.+?order-received.+?
+colours=blue
+-
+#ipv6
+regexp=(([0-9a-fA-F]{1,4})?\:\:?[0-9a-fA-F]{1,4})+
+colours=white
+=======
+#time
+#regexp=\s[0-9]{1,6}\s
+#colours=yellow
+#=======
+#type
+#regexp=[A-Z]{1,4}
+#colours=cyan
+#=======
+#in
+regexp=(IN|CH)
+colours=yellow
+=======
+#domain
+#regexp=[a-z0-9-]+\.[a-z0-9]+
+#colours=white
+#=======
+#ip address
+regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+colours=white
+=======
+#comments
+regexp=^;;\s\w*\s*\w*
+colours=yellow
+#=======
+regexp=\sDPT=.?[0-9]{1,6}\s
+colours=bold red
+========
+regexp=SRC
+colours=magenta
+========
+regexp=TCP
+colours=bold green
+========
+regexp=UDP
+colours=bold green
+========
+#regexp=[a-z0-9-]+\.[a-z0-9]+\.[a-z0-9-]+\.[a-z0-9]+
+#colours=bold yellow
+#========
+regexp=\[UFW ALLOW\]
+colours=green
+======
+regexp=\[UFW BLOCK\]
+colours=red
+======
+regexp=\[UFW AUDIT\]
+colours=bold blue
+======
+regexp=SRC=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+colours=yellow
+=======
+regexp=(.+?by ip)
+colours=bold yellow
+count=once
+-
+regexp=.+?linkout.+?
+colours=bold magenta
+count=once
+-
