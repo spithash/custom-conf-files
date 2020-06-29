@@ -88,12 +88,10 @@ count=once
 #colours=bold green
 #-
 
-# HTTP OK Status codes - from http://httpcats.herokuapp.com/ ;-)
 regexp=\s(?:10[01]|20[02467]|30[0123457])
 colours=green
 count=once
 -
-# HTTP Error status code - from the same source as above
 regexp=\s(?:40[1-9]|41[1-8]|42[2-9]|431|444|450|50[2-9]|599)
 colours=bold red
 count=once
