@@ -1,0 +1,78 @@
+#ipv6
+regexp=(([0-9a-fA-F]{1,4})?\:\:?[0-9a-fA-F]{1,4})+
+colours=green
+=======
+#time
+regexp=\s[0-9]{1,6}\s
+colours=red
+=======
+#milisecs
+regexp=\s[0-9]{1,6}ms\s
+colours=bold green
+=======
+#type
+regexp=[A-Z]{1,4}
+colours=cyan
+=======
+#in
+regexp=(IN|CH)
+colours=yellow
+=======
+#domain
+regexp=[a-z0-9-]+\.
+colours=magenta
+=======
+#ip address
+regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+colours=green
+=======
+#comments
+regexp=^;;\s\w*\s*\w*
+colours=yellow
+=======
+#Title
+regexp=; <<>> DiG (\d+\.\d+\.\d+).*<<>>\s(\S+)$
+colours=default,green,bold magenta
+======
+regexp=.+?REJECT.+?
+colours=red
+======
+regexp=.+?SERVER_ERROR.+?
+colours=yellow
+======
+regexp=\s[0-9]ms\s
+colours=bold green
+=======
+regexp=.+?query.+?
+colours=green
+======
+regexp=(.*)SERVFAIL(.*)
+colours=red
+======
+regexp=(.*)BOGUS(.*)
+colours=bold magenta
+======
+regexp=.+?gravity blocked(.*)
+colours=red
+======
+regexp=.+?blacklisted(.*)
+colours=red
+======
+regexp=.+?dnssec-query(.*)
+colours=bold yellow
+======
+regexp=.+?cached(.*)
+colours=yellow
+======
+regexp=192.168.231.1
+colours=bold blue
+======
+regexp=192.168.231.2
+colours=bold blue
+======
+regexp=192.168.2\.(.*)
+colours=bold cyan
+======
+regexp=(.*)0.0.0.0(.*)
+colours=red
+======
