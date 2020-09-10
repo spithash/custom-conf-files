@@ -1,2 +1,2 @@
-# Grc color configuration files
-My custom conf files
+# Configuration files
+My custom conf files, grc, tmux, vim etc
