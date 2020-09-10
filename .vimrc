@@ -1,7 +1,7 @@
 set background=dark
 syntax on
 
-" This is to remember the line I was
+" This is to remember the line I was editing the last time
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
