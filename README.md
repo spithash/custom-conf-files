@@ -1,2 +1,2 @@
 # Grc color configuration files
-My custom grc conf files
+My custom conf files
