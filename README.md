@@ -1,2 +1,2 @@
 # Configuration files
-My custom conf files, grc, tmux, vim etc
+My custom conf files, grc, tmux, vim, nano
