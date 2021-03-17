@@ -1,6 +1,7 @@
 alias free_cache='echo 1 > /proc/sys/vm/drop_caches && echo 2 > /proc/sys/vm/drop_caches && echo 3 > /proc/sys/vm/drop_caches'
 alias weather='curl -H "Accept-Language: us" wttr.in/~90210?m'
 alias rm='rm -i'
+alias tmux='tmux -u'
 alias pip3-upgrade-all-packages='pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U '
 alias open_ports='sudo lsof -i -P -n | grep LISTEN'
 
