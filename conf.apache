@@ -137,6 +137,11 @@ regexp=.+?fail2ban.log.+?
 colours=bold blue
 count=once
 -
+# Log Switching
+regexp=.+?ufw.log.+?
+colours=bold blue
+count=once
+-
 # cart ()
 regexp=.+?/cart/.+?
 colours=bold blue
