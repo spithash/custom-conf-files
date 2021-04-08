@@ -64,13 +64,7 @@ colours=bold yellow
 regexp=.+?cached(.*)
 colours=yellow
 ======
-regexp=192.168.231.1
-colours=bold blue
-======
-regexp=192.168.231.2
-colours=bold blue
-======
-regexp=192.168.2\.(.*)
+regexp=192.168.2(.*)
 colours=bold cyan
 ======
 regexp=(.*)0.0.0.0(.*)
