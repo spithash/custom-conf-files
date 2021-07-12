@@ -12,3 +12,7 @@ alias ll='exa -l --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
 alias latrh='/bin/ls -latrh --color=auto' #similar to ls -latrh
+
+export LANG=en_US.utf8
+export LC_ALL=en_US.utf8
+export TERM=screen-256color
