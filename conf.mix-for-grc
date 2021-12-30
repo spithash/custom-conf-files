@@ -278,6 +278,6 @@ regexp=.+?/feed/.+?
 colours=blue
 count=once
 -
-regexp=.+?403.+?
+regexp=.+? 403
 colours=bold red
 -
