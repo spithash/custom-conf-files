@@ -6,8 +6,7 @@ colours=green
 regexp=\s[0-9]{1,6}\s
 colours=red
 =======
-#milisecs
-regexp=\s[0-9]{1,6}ms\s
+#milisecsregexp=\s[0-9]{1,6}ms\s
 colours=bold green
 =======
 #type
@@ -15,8 +14,7 @@ regexp=[A-Z]{1,4}
 colours=cyan
 =======
 #in
-regexp=(IN|CH)
-colours=yellow
+regexp=(IN|CH)colours=yellow
 =======
 #domain
 regexp=[a-z0-9-]+\.
