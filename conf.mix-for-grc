@@ -105,7 +105,12 @@ count=once
 regexp=\s(?:301)
 colours=bold blue
 count=once
-
+-
+# Log Switching
+regexp=.+?monit.log.+?
+colours=bold blue
+count=once
+-
 # Log Switching
 regexp=.+?access.log.+?
 colours=bold blue
