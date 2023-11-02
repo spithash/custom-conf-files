@@ -250,12 +250,56 @@ colours=on_red
 regexp=(?:Passed CLEAN)
 colours=bold green
 -
+# Received-SPF:
+regexp=Received-SPF:
+colours=magenta
+-
+# Received-SPF: Pass
+regexp=Received-SPF: Pass
+colours=bold green
+-
+# Received-SPF: Softfail
+regexp= Softfail
+colours=bold yellow
+-
+# Message rejected due to: SPF fail
+regexp=Message rejected due to: SPF fail
+colours=black on_red
+-
+# DKIM verification successful
+regexp=DKIM verification successful
+colours=bold green
+-
+# DKIM-Signature 
+regexp=DKIM-Signature
+colours=magenta
+-
 # Quarantined mail
 regexp=(?:Quarantined)
 colours=on_red
 -
+# Recipient address rejected: User unknown
+regexp=Recipient address rejected: User unknown
+colours=on_red
+-
+# Passed UNCHECKED
+regexp=Passed UNCHECKED
+colours=bold yellow
+-
+# Permerror
+regexp=Permerror
+colours=bold red
+-
+# Blocked BANNED
+regexp=Blocked BANNED
+colours=on_red
+-
 # infected mail
 regexp=(?:Blocked INFECTED)
+colours=on_red
+-
+# Relay access denied
+regexp=Relay access denied
 colours=on_red
 -
 # deferred mail
@@ -268,7 +312,7 @@ colours=bold yellow
 -
 # greylisted
 regexp=(?:Greylisted)
-colours=bold magenta
+colours=black on_magenta
 -
 # to mail address
 regexp=(?:to=<.+?>)
@@ -375,4 +419,18 @@ count=once
 -
 regexp=.+? 403
 colours=bold red
+-
+# everything in `'
+regexp=\`.+?\'
+colours=bold yellow
+count=more
+-
+# IPv4 or IPv4:Port
+regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(:\d{1,5})?
+colours=bold yellow
+count=more
+-
+# IPv6
+regexp=(([0-9a-fA-F]{1,4})?\:\:?[0-9a-fA-F]{1,4})+
+colours=bold yellow
 -
