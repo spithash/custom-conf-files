@@ -6,6 +6,14 @@ colours=bold blink red
 regexp='INBOX'
 colours=bold blink green
 -
+# blocked using bl.spamcop.net
+regexp=blocked using bl.spamcop.net
+colours=black on_red
+-
+# Sender address rejected
+regexp=Sender address rejected
+colours=black on_red
+-
 # Email address
 regexp=[a-zA-z0-9\.\-\+]+\@[\w\-\.]+
 colours=green
