@@ -339,8 +339,8 @@ regexp=(?:listed by domain list.dnswl.org)
 colours=bold green
 -
 # blocked using
-regexp=(?:blocked using)
-colours=on_red
+regexp=(blocked using (?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9])
+colours=black on_red
 -
 # to mail address
 regexp=(?:to=<.+?>)
