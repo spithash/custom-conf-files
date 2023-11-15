@@ -6,8 +6,8 @@ colours=bold blink red
 regexp='INBOX'
 colours=bold blink green
 -
-# blocked using bl.spamcop.net
-regexp=blocked using bl.spamcop.net
+# blocked using
+regexp=blocked using
 colours=black on_red
 -
 # Sender address rejected
@@ -321,6 +321,26 @@ colours=bold yellow
 # greylisted
 regexp=(?:Greylisted)
 colours=black on_magenta
+-
+# postscreen
+regexp=postscreen
+colours=black on_magenta
+-
+# ALLOWLISTED
+regexp=ALLOWLISTED
+colours=bold green
+-
+# listed by domain
+regexp=(?:listed by domain)
+colours=on_red
+-
+# listed by domain list.dnswl.org
+regexp=(?:listed by domain list.dnswl.org)
+colours=bold green
+-
+# blocked using
+regexp=(?:blocked using)
+colours=on_red
 -
 # to mail address
 regexp=(?:to=<.+?>)
