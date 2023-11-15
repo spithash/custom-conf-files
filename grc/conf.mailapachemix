@@ -331,8 +331,8 @@ regexp=ALLOWLISTED
 colours=bold green
 -
 # listed by domain
-regexp=(?:listed by domain)
-colours=on_red
+regexp=(listed by domain (?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9])
+colours=black on_red
 -
 # listed by domain list.dnswl.org
 regexp=(?:listed by domain list.dnswl.org)
