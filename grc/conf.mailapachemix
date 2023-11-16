@@ -342,6 +342,10 @@ colours=bold green
 regexp=(blocked using (?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9])
 colours=black on_red
 -
+# reject
+regexp=reject
+colours=bold red
+-
 # to mail address
 regexp=(?:to=<.+?>)
 colours=bold blue
