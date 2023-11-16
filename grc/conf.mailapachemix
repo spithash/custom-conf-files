@@ -312,7 +312,7 @@ colours=on_red
 -
 # deferred mail
 regexp=(?:status=deferred)
-colours=bold yellow
+colours=blink bold yellow
 -
 # bounced mail
 regexp=(?:status=bounced)
