@@ -4,7 +4,7 @@ colours=bold blink red
 -
 # INBOX
 regexp='INBOX'
-colours=bold blink green
+colours=bold green
 -
 # blocked using
 regexp=blocked using
@@ -324,7 +324,7 @@ colours=black on_magenta
 -
 # postscreen
 regexp=postscreen
-colours=black on_magenta
+colours=bold magenta
 -
 # ALLOWLISTED
 regexp=ALLOWLISTED
@@ -344,7 +344,7 @@ colours=black on_red
 -
 # reject
 regexp=reject
-colours=bold red
+colours=blink bold red
 -
 # to mail address
 regexp=(?:to=<.+?>)
@@ -372,7 +372,7 @@ colours=yellow
 -
 # mail bounced status
 regexp=(?:status=bounced)
-colours=bold yellow
+colours=blink bold yellow
 -
 # order received
 regexp=.+?order-received.+?
