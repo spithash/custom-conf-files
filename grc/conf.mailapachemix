@@ -324,7 +324,7 @@ colours=black on_magenta
 -
 # postscreen
 regexp=postscreen
-colours=bold magenta
+colours=magenta
 -
 # ALLOWLISTED
 regexp=ALLOWLISTED
