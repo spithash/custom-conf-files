@@ -1,3 +1,7 @@
+# listed by domain list.dnswl.org
+regexp=listed by domain list.dnswl.org
+colours=bold green
+-
 # Junk
 regexp='Junk'
 colours=bold blink red
