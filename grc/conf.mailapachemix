@@ -419,6 +419,9 @@ colours=magenta
 regexp=TCP
 colours=bold green
 -
+regexp=PROTO=ICMP
+colours=bold green
+-
 regexp=UDP
 colours=bold green
 -
