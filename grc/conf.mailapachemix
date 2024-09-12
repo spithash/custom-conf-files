@@ -1,11 +1,3 @@
-# listed by domain list.dnswl.org
-regexp=listed by domain list.dnswl.org
-colours=bold green
--
-# listed by domain wl.mailspike.net
-regexp=listed by domain wl.mailspike.net
-colours=bold green
--
 # Junk
 regexp='Junk'
 colours=bold blink red
@@ -344,6 +336,10 @@ colours= black on_red
 -
 # listed by domain list.dnswl.org
 regexp=(?:listed by domain list.dnswl.org)
+colours=bold green
+-
+# listed by domain wl.mailspike.net
+regexp=(?:listed by domain wl.mailspike.net)
 colours=bold green
 -
 # blocked using
