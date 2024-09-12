@@ -2,6 +2,10 @@
 regexp=listed by domain list.dnswl.org
 colours=bold green
 -
+# listed by domain wl.mailspike.net
+regexp=listed by domain wl.mailspike.net
+colours=bold green
+-
 # Junk
 regexp='Junk'
 colours=bold blink red
@@ -336,7 +340,7 @@ colours=bold green
 -
 # listed by domain
 regexp=(listed by domain (?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9])
-colours=black on_red
+colours= black on_red
 -
 # listed by domain list.dnswl.org
 regexp=(?:listed by domain list.dnswl.org)
@@ -347,7 +351,7 @@ regexp=(blocked using (?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9
 colours=black on_red
 -
 # reject
-regexp=reject:
+regexp=reject: 
 colours=blink bold red
 -
 # to mail address
@@ -420,7 +424,7 @@ regexp=TCP
 colours=bold green
 -
 regexp=PROTO=ICMP
-colours=bold green
+colours=bold red
 -
 regexp=UDP
 colours=bold green
