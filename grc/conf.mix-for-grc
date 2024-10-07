@@ -1,3 +1,4 @@
+
 regexp=^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
 colours=bold blue
 count=once
@@ -27,6 +28,11 @@ regexp=\"HEAD .+?\"
 colours=green
 count=more
 -
+# REST API RIHOH
+regexp=/wp-json/custom-api/v1/ricoh-products
+colours=bold cyan
+count=more
+-
 # everything in ""
 regexp=\"POST .+?\"
 colours=bold yellow
@@ -49,6 +55,11 @@ count=more
 -
 # Googlebot ()
 regexp=.+?googlebot.+?
+colours=red
+count=more
+-
+# Googlebot ()
+regexp=.+google-proxy
 colours=red
 count=more
 -
@@ -112,6 +123,11 @@ colours=bold blue
 count=once
 -
 # Log Switching
+regexp=.+?mysql_error.log.+?
+colours=bold red
+count=once
+-
+# Log Switching
 regexp=.+?access.log.+?
 colours=bold blue
 count=once
@@ -147,13 +163,28 @@ colours=bold blue
 count=once
 -
 # cart ()
-regexp=.+?/cart/.+?
+regexp=\/cart\/+?
+colours=blue
+count=more
+-
+# add to cart
+regexp=wc-ajax=add_to_cart.+?
+colours=bold cyan
+count=once
+-
+# order received
+regexp=.+?order-received.+?
+colours=bold magenta
+count=more
+-
+# checkout ()
+regexp=\/checkout\/+?
 colours=bold blue
 count=more
 -
 # checkout ()
-regexp=.+?/checkout/.+?
-colours=bold blue
+regexp=.+?orders&success=true.+?
+colours=bold magenta
 count=more
 -
 # skroutz ()
@@ -196,6 +227,11 @@ regexp=.+?gclid=+?
 colours=bold magenta
 count=more
 -
+# price_filter ()
+regexp=(?:min_price=)
+colours=bold blue
+count=more
+-
 # sent mail
 regexp=(?:status=sent)
 colours=bold green
@@ -207,10 +243,6 @@ colours=bold blue
 # mail bounced status
 regexp=(?:status=bounced)
 colours=bold yellow
--
-# order received
-regexp=.+?order-received.+?
-colours=blue
 -
 #ipv6
 regexp=(([0-9a-fA-F]{1,4})?\:\:?[0-9a-fA-F]{1,4})+
@@ -249,6 +281,9 @@ colours=magenta
 regexp=TCP
 colours=bold green
 -
+regexp=PROTO=ICMP
+colours=bold red
+-
 regexp=UDP
 colours=bold green
 -
@@ -285,4 +320,8 @@ count=once
 -
 regexp=.+? 403
 colours=bold red
+-
+# IPv6 (or timestamp? probably.)
+regexp=(([0-9a-fA-F]{1,4})?\:\:?[0-9a-fA-F]{1,4})+
+colours=yellow
 -
