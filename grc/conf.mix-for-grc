@@ -171,6 +171,11 @@ regexp=wc-ajax=add_to_cart.+?
 colours=bold cyan
 count=once
 -
+# Apply coupon
+regexp=wc-ajax=apply_coupon.+?
+colours=bold red
+count=once
+-
 # order received
 regexp=.+?order-received.+?
 colours=bold magenta
