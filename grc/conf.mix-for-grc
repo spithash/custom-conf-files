@@ -323,7 +323,8 @@ colours=blue
 count=once
 -
 # match certain status codes surrounded by spaces: \s
-regexp=.+?(?:\s)(40[1-9]|41[0-8]|42[2-9]|431|444|450|50[2-9]|599)(?:\s)
+# regexp=.+?(?:\s)(40[1-9]|41[0-8]|42[2-9]|431|444|450|50[2-9]|599)(?:\s)  (including 404)
+regexp=.+?(?:\s)(40[1-35-9]|41[0-8]|42[2-9]|431|444|450|50[2-9]|599)(?:\s)
 colours=bold red
 -
 # IPv6 (or timestamp? probably.)
