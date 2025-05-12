@@ -322,6 +322,10 @@ count=once
 regexp=.+?(?:\s)(40[1-35-9]|41[0-8]|42[2-9]|431|444|450|50[2-9]|599)(?:\s)
 colours=bold red
 -
+# 404's'
+regexp=(?:\s)(404)(?:\s)
+colours= bold red
+-
 # IPv6 (or timestamp? probably.)
 regexp=(([0-9a-fA-F]{1,4})?\:\:?[0-9a-fA-F]{1,4})+
 colours=yellow
