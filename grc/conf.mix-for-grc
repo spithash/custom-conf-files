@@ -1,333 +1,704 @@
-regexp=^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+# ============================================================
+# GRC APACHE / SYSTEM LOG COLOR CONFIG
+# ============================================================
+
+
+# ============================================================
+# APACHE IP - beginning of line
+# ============================================================
+
+regexp=^\d{1,3}(?:\.\d{1,3}){3}
 colours=bold blue
 count=once
 -
-# everything in brackets
-regexp=\[.+?\]
+
+
+# ============================================================
+# EVERYTHING IN []
+# Apache timestamp / brackets
+# ============================================================
+
+regexp=\[[^]]*\]
 colours=cyan
 count=once
 -
-# Ratings
+
+
+# ============================================================
+# RATINGS
+# ============================================================
+
 regexp=.+?&rate=.+?
 colours=yellow
 count=once
 -
-# everything in ""
-regexp=\".+?\"
+
+
+# ============================================================
+# GOOGLEBOT HOSTNAME
+# Do NOT use ^.*googlebot.*$
+# because that colors the entire Apache line.
+# ============================================================
+
+regexp=[A-Za-z0-9.-]+\.googlebot
+colours=red
+count=once
+-
+
+
+# ============================================================
+# GOOGLEBOT USER AGENT
+#
+# Example:
+# Googlebot/2.1
+# ============================================================
+
+regexp=Googlebot/[0-9.]+
+colours=red
+count=once
+-
+
+
+# ============================================================
+# GOOGLE PROXY
+# ============================================================
+
+regexp=.+google-proxy
+colours=red
+count=once
+-
+
+
+regexp=^google-proxy
+colours=red
+count=once
+-
+
+
+regexp=^rate-limited-proxy
+colours=red
+count=once
+-
+
+
+# ============================================================
+# EVERYTHING IN ""
+#
+# Optimized from:
+# \".+?\"
+#
+# to:
+# \"[^\"]*\"
+# ============================================================
+
+regexp=\"[^\"]*\"
 colours=magenta
 count=more
 -
-# everything in ""
-regexp=\"GET .+?\"
+
+
+# ============================================================
+# GET
+# ============================================================
+
+regexp=\"GET [^\"]*\"
 colours=bold green
-count=more
+count=once
 -
-# everything in ""
-regexp=\"HEAD .+?\"
+
+
+# ============================================================
+# HEAD
+# ============================================================
+
+regexp=\"HEAD [^\"]*\"
 colours=green
-count=more
+count=once
 -
+
+
+# ============================================================
 # REST API RIHOH
-regexp=/wp-json/custom-api/v1/ricoh-products
-colours=bold cyan
-count=more
--
-# everything in ""
-regexp=\"POST .+?\"
+# ============================================================
+
+# regexp=/wp-json/custom-api/v1/ricoh-products
+# colours=bold cyan
+# count=once
+# -
+
+
+# ============================================================
+# POST
+# ============================================================
+
+regexp=\"POST [^\"]*\"
 colours=bold yellow
-count=more
+count=once
 -
-# everything in ""
+
+
+# ============================================================
+# OPTIONAL BOTS
+# ============================================================
+
 # regexp=.+?rogerbot.+?
 # colours=bold red
 # count=more
 #-
-# everything in ""
+
+
 # regexp=.+?opensiteexplorer.+?
 # colours=bold red
 # count=more
 #-
-# everything in ()
-regexp=\(.+?\)
+
+
+# ============================================================
+# EVERYTHING IN ()
+# ============================================================
+
+regexp=\([^)]*\)
 colours=green
 count=more
 -
-# Googlebot ()
-regexp=.+?googlebot.+?
-colours=red
-count=more
--
-# Googlebot ()
-regexp=.+google-proxy
-colours=red
-count=more
--
-# Fail2Ban Ban ()
-regexp=(.+?Ban.+?)
+
+
+# ============================================================
+# FAIL2BAN BAN
+# ============================================================
+
+regexp=.+?Ban.+?
 colours=red
 count=once
 -
-# Fail2Ban Unban ()
-regexp=(.+?Unban.+?)
+
+
+# ============================================================
+# FAIL2BAN UNBAN
+# ============================================================
+
+regexp=.+?Unban.+?
 colours=green
 count=once
 -
-# Google-Proxy ()
-regexp=^google-proxy
-colours=red
-count=more
--
-# Google-Proxy ()
-regexp=^rate-limited-proxy
-colours=red
-count=more
--
-# HTTP Method
+
+
+# ============================================================
+# HTTP METHODS
+# ============================================================
+
 regexp=(?:HEAD|PUT|DELETE)
 colours=bold blue
 count=once
 -
-# HTTP Method
-#regexp=(?:POST)
-#colours=yellow
-#count=once
+
+
+# ============================================================
+# HTTP METHOD - POST
+# ============================================================
+
+# regexp=(?:POST)
+# colours=yellow
+# count=once
 #-
-# HTTP Path
-#regexp=\s/[^\s]+
-#colours=bold green
+
+
+# ============================================================
+# HTTP PATH
+# ============================================================
+
+# regexp=\s/[^\s]+
+# colours=bold green
 #-
-# HTTP OK Status codes - from http://httpcats.herokuapp.com/ ;-)
-regexp=\s(?:10[01]|20[02467]|30[0123457])
+
+
+# ============================================================
+# HTTP SUCCESS STATUS
+# ============================================================
+
+regexp=\s(?:10[01]|20[02467]|30[0123457])\s
 colours=green
 count=once
 -
-# Request byte size
-regexp=\s(?!(?:10[01]|20[02467]|30[0123457])|(?:40[1-9]|41[1-8]|42[2-9]|431|444|450|50[2-9]|599))\d+
+
+
+# ============================================================
+# REQUEST BYTE SIZE
+# ============================================================
+
+regexp=\s(?!(?:10[01]|20[02467]|30[0123457])\s|(?:40[1-9]|41[1-8]|42[2-9]|431|444|450|50[2-9]|599)\s)\d+
 colours=yellow
 count=once
 -
-# HTTP Redirects
-regexp=\s(?:301)
+
+
+# ============================================================
+# HTTP REDIRECT
+# ============================================================
+
+regexp=\s301\s
 colours=bold blue
 count=once
 -
-# Log Switching
-regexp=.+?monit.log.+?
+
+
+# ============================================================
+# LOG SWITCHING
+# ============================================================
+
+regexp=monit\.log
 colours=bold blue
 count=once
 -
-# Log Switching
-regexp=.+?mysql_error.log.+?
+
+
+regexp=mysql_error\.log
 colours=bold red
 count=once
 -
-# Log Switching
-regexp=.+?access.log.+?
+
+
+regexp=access\.log
 colours=bold blue
 count=once
 -
-# Log Switching
-regexp=.+?redis-server.log.+?
+
+
+regexp=redis-server\.log
 colours=bold blue
 count=once
 -
-# Log Switching
-regexp=.+?error.log.+?
+
+
+regexp=error\.log
 colours=bold red
 count=once
 -
-# Log Switching
-regexp=.+?mail.log.+?
+
+
+regexp=mail\.log
 colours=bold blue
 count=once
 -
-# Log Switching
-regexp=.+?auth.log.+?
+
+
+regexp=auth\.log
 colours=bold blue
 count=once
 -
-# Log Switching
-regexp=.+?fail2ban.log.+?
+
+
+regexp=fail2ban\.log
 colours=bold blue
 count=once
 -
-# Log Switching
-regexp=.+?ufw.log.+?
+
+
+regexp=ufw\.log
 colours=bold blue
 count=once
 -
-# cart ()
-regexp=\/cart\/+?
+
+
+# ============================================================
+# WOOCOMMERCE - CART
+# ============================================================
+
+regexp=/cart/
 colours=blue
 count=more
 -
-# add to cart
-regexp=wc-ajax=add_to_cart.+?
+
+
+# ============================================================
+# ADD TO CART
+# ============================================================
+
+regexp=wc-ajax=add_to_cart
 colours=bold cyan
 count=once
 -
-# Apply coupon
-regexp=wc-ajax=apply_coupon.+?
+
+
+# ============================================================
+# APPLY COUPON
+# ============================================================
+
+regexp=wc-ajax=apply_coupon
 colours=bold red
 count=once
 -
-# order received
-regexp=.+?order-received.+?
+
+
+# ============================================================
+# ORDER RECEIVED
+# ============================================================
+
+regexp=order-received
 colours=bold magenta
-count=more
+count=once
 -
-# checkout ()
-regexp=\/checkout\/+?
+
+
+# ============================================================
+# CHECKOUT
+# ============================================================
+
+regexp=/checkout/
 colours=bold blue
 count=more
 -
-# checkout ()
-regexp=.+?orders&success=true.+?
+
+
+# ============================================================
+# ORDER SUCCESS
+# ============================================================
+
+regexp=orders&success=true
 colours=bold magenta
-count=more
+count=once
 -
-# skroutz ()
-regexp=.+?skroutz.+?
+
+
+# ============================================================
+# SKROUTZ
+# ============================================================
+
+regexp=skroutz
 colours=bold red
 count=more
 -
-# bestprice ()
-regexp=.+?bestprice.+?
+
+
+# ============================================================
+# BESTPRICE
+# ============================================================
+
+regexp=bestprice
 colours=bold red
 count=more
 -
-# hotprice ()
-regexp=.+?hotprice.+?
+
+
+# ============================================================
+# HOTPRICE
+# ============================================================
+
+regexp=hotprice
 colours=bold red
 count=more
 -
-# skroutz ()
-regexp=.+?https://www.skroutz.gr/.+?
+
+
+# ============================================================
+# SKROUTZ URL
+# ============================================================
+
+regexp=https://www\.skroutz\.gr/
 colours=bold red
-count=more
+count=once
 -
-# hotprice ()
-regexp=.+?www.hotprice.gr.+?
+
+
+# ============================================================
+# HOTPRICE URL
+# ============================================================
+
+regexp=www\.hotprice\.gr
 colours=bold red
-count=more
+count=once
 -
-# bestprice ()
-regexp=.+?www.bestprice.gr.+?
+
+
+# ============================================================
+# BESTPRICE URL
+# ============================================================
+
+regexp=www\.bestprice\.gr
 colours=bold red
-count=more
+count=once
 -
-# skroutz bot ()
-regexp=.+?SkroutzBot+?
+
+
+# ============================================================
+# SKROUTZ BOT
+# ============================================================
+
+regexp=SkroutzBot
 colours=bold red
-count=more
+count=once
 -
-# adwords ()
-regexp=.+?gclid=+?
+
+
+# ============================================================
+# ADWORDS
+# ============================================================
+
+regexp=gclid=
 colours=bold magenta
-count=more
+count=once
 -
-# price_filter ()
-regexp=(?:min_price=)
+
+
+# ============================================================
+# PRICE FILTER
+# ============================================================
+
+regexp=min_price=
 colours=bold blue
-count=more
+count=once
 -
-# sent mail
-regexp=(?:status=sent)
+
+
+# ============================================================
+# SENT MAIL
+# ============================================================
+
+regexp=status=sent
 colours=bold green
+count=once
 -
-# to mail address
-regexp=(?:to=<.+?>)
+
+
+# ============================================================
+# TO MAIL ADDRESS
+# ============================================================
+
+regexp=to=<[^>]+>
 colours=bold blue
+count=once
 -
-# mail bounced status
-regexp=(?:status=bounced)
+
+
+# ============================================================
+# MAIL BOUNCED
+# ============================================================
+
+regexp=status=bounced
 colours=bold yellow
+count=once
 -
-#ipv6
-regexp=(([0-9a-fA-F]{1,4})?\:\:?[0-9a-fA-F]{1,4})+
-colours=white
+
+
+# ============================================================
+# IPV6
+# ============================================================
+
+regexp=(?:[0-9a-fA-F]{1,4}:){2,7}[0-9a-fA-F]{0,4}
+colours=yellow
+count=once
 -
-#time
-#regexp=\s[0-9]{1,6}\s
-#colours=yellow
+
+
+# ============================================================
+# TIME
+# ============================================================
+
+# regexp=\s[0-9]{1,6}\s
+# colours=yellow
 #-
-#type
-#regexp=[A-Z]{1,4}
-#colours=cyan
+
+
+# ============================================================
+# TYPE
+# ============================================================
+
+# regexp=[A-Z]{1,4}
+# colours=cyan
 #-
-#in
+
+
+# ============================================================
+# IN / CH
+# ============================================================
+
 regexp=(IN|CH)
 colours=yellow
+count=once
 -
-#domain
-#regexp=[a-z0-9-]+\.[a-z0-9]+
-#colours=white
+
+
+# ============================================================
+# DOMAIN
+# ============================================================
+
+# regexp=[a-z0-9-]+\.[a-z0-9]+
+# colours=white
 #-
-#ip address
-regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+
+
+# ============================================================
+# IP ADDRESS
+# ============================================================
+
+regexp=\d{1,3}(?:\.\d{1,3}){3}
 colours=white
+count=once
 -
-#comments
+
+
+# ============================================================
+# COMMENTS
+# ============================================================
+
 regexp=^;;\s\w*\s*\w*
 colours=yellow
 #-
-regexp=\sDPT=.?[0-9]{1,6}\s
+
+
+# ============================================================
+# DPT
+# ============================================================
+
+regexp=\sDPT=.?\d{1,6}\s
 colours=bold red
+count=once
 -
+
+
+# ============================================================
+# SRC
+# ============================================================
+
 regexp=SRC
 colours=magenta
+count=once
 -
+
+
+# ============================================================
+# TCP
+# ============================================================
+
 regexp=TCP
 colours=bold green
+count=once
 -
+
+
+# ============================================================
+# ICMP
+# ============================================================
+
 regexp=PROTO=ICMP
 colours=bold red
+count=once
 -
+
+
+# ============================================================
+# UDP
+# ============================================================
+
 regexp=UDP
 colours=bold green
+count=once
 -
-#regexp=[a-z0-9-]+\.[a-z0-9]+\.[a-z0-9-]+\.[a-z0-9]+
-#colours=bold yellow
+
+
+# ============================================================
+# DOMAIN/IP ALTERNATIVE
+# ============================================================
+
+# regexp=[a-z0-9-]+\.[a-z0-9]+\.[a-z0-9-]+\.[a-z0-9]+
+# colours=bold yellow
 #-
+
+
+# ============================================================
+# UFW ALLOW
+# ============================================================
+
 regexp=\[UFW ALLOW\]
 colours=green
+count=once
 -
+
+
+# ============================================================
+# UFW BLOCK
+# ============================================================
+
 regexp=\[UFW BLOCK\]
 colours=red
+count=once
 -
+
+
+# ============================================================
+# UFW AUDIT
+# ============================================================
+
 regexp=\[UFW AUDIT\]
 colours=bold blue
+count=once
 -
-regexp=SRC=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+
+
+# ============================================================
+# SRC IP
+# ============================================================
+
+regexp=SRC=\d{1,3}(?:\.\d{1,3}){3}
 colours=yellow
+count=once
 -
-regexp=(.+?by ip)
+
+
+# ============================================================
+# BY IP
+# ============================================================
+
+regexp=by ip
 colours=bold yellow
 count=once
 -
+
+
+# ============================================================
+# LINKOUT
+# ============================================================
 regexp=.+?linkout.+?
 colours=bold magenta
 count=once
 -
-regexp=.+?/nou/meow.php.+?
+
+
+# ============================================================
+# SUSPICIOUS PHP
+# ============================================================
+
+regexp=/nou/meow\.php
 colours=bold yellow
 count=once
 -
-regexp=.+?/feed/.+?
+
+
+# ============================================================
+# FEED
+# ============================================================
+
+regexp=/feed/
 colours=blue
 count=once
 -
-# match certain status codes surrounded by spaces: \s
-# regexp=.+?(?:\s)(40[1-9]|41[0-8]|42[2-9]|431|444|450|50[2-9]|599)(?:\s)  (including 404)
-regexp=.+?(?:\s)(40[1-35-9]|41[0-8]|42[2-9]|431|444|450|50[2-9]|599)(?:\s)
+
+
+# ============================================================
+# HTTP ERRORS
+# ============================================================
+
+regexp=\s(?:40[1-35-9]|41[0-8]|42[2-9]|431|444|450|50[2-9]|599)\s
 colours=bold red
--
-# 404's'
-regexp=(?:\s)(404)(?:\s)
-colours= bold red
--
-# IPv6 (or timestamp? probably.)
-regexp=(([0-9a-fA-F]{1,4})?\:\:?[0-9a-fA-F]{1,4})+
-colours=yellow
+count=once
 -
 
+
+# ============================================================
+# 404
+# ============================================================
+
+regexp=\s404\s
+colours=bold red
+count=once
+-
